@@ -1,0 +1,1 @@
+ javac .\Main.java; java Main; Get-ChildItem . -recurse -include *.class | remove-item
