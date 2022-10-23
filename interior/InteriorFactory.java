@@ -1,7 +1,7 @@
 package interior;
 
 public interface InteriorFactory {
-    public Tires createTires();
-    public Furniture createFurniture();
-    public Housing createHousing();
+    public GloveCompartment createGloveCompartment();
+    public Upholstery createUpholstery();
+    public Ceiling createCeiling();
 }

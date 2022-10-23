@@ -1,13 +1,15 @@
 package interior;
 
 public class ModernInteriorFactory implements InteriorFactory {
-    public Tires createTires() {
-        return new ModernTires();
+    public GloveCompartment createGloveCompartment() {
+        return new ModernGloveCompartment();
     }
-    public Furniture createFurniture() {
-        return new ModernFurniture();
+
+    public Upholstery createUpholstery() {
+        return new ModernUpholstery();
     }
-    public Housing createHousing() {
-        return new ModernHousing();
+
+    public Ceiling createCeiling() {
+        return new ModernCeiling();
     }
 }
