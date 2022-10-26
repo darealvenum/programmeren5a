@@ -1,6 +1,6 @@
 package interior;
 
-public class ClassicInterriorFactory implements InteriorFactory {
+public class ClassicInteriorFactory implements InteriorFactory {
     public GloveCompartment createGloveCompartment() {
         return new ClassicGloveCompartment();
     }

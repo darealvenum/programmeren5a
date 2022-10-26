@@ -1,25 +1,28 @@
 package cars;
 
-public class CarDecorator extends Car {
-    protected Car car;
-
-    public CarDecorator(Car car) {
-        super(car.getEngine(), car.getTires(), car.getUpholstery(), car.getCeiling(), car.getGloveCompartment());
+public class CarDecorator implements CarInterface {
+    protected CarInterface car;
+    public CarDecorator(CarInterface car) {
         this.car = car;
     }
-
-    @Override
-    public void startCar() {
-        car.startCar();
+    public void park() {
+        this.car.park();
     }
 
-    @Override
+    public void entertain() {
+        this.car.entertain();
+    }
+
+    public void startCar() {
+        this.car.startCar();
+    }
+
     public void stopCar() {
-        car.stopCar();
+        this.car.stopCar();
     }
 
     @Override
     public String toString() {
-        return car.toString();
+        return this.car.toString();
     }
 }

@@ -3,37 +3,14 @@ package cars;
 import interior.*;
 import bridges.*;
 
-public abstract class Car {
+public abstract class Car implements CarInterface {
     protected String model; 
     protected Engine engine;
     protected Tires tires;
     protected Upholstery upholstery;
     protected Ceiling ceiling;
     protected GloveCompartment gloveCompartment;
-
-    // getters
-    public Engine getEngine() {
-        return engine;
-    }
-
-    public Tires getTires() {
-        return tires;
-    }
-
-    public Upholstery getUpholstery() {
-        return upholstery;
-    }
-
-    public Ceiling getCeiling() {
-        return ceiling;
-    }
-
-    public GloveCompartment getGloveCompartment() {
-        return gloveCompartment;
-    }
-
-
-
+    
     protected Car(Engine engine, Tires tires, Upholstery upholstery, Ceiling ceiling, GloveCompartment gloveCompartment) {
         this.engine = engine;
         this.tires = tires;
@@ -56,15 +33,19 @@ public abstract class Car {
         String engineType = this.engine instanceof ElectricEngine ? "Electric" : "Gas";
         String TireType = this.tires instanceof AllSeasonTires ? this.tires instanceof WinterTires ? "Winter" : "All Season" : "Summer";
         return "Car [ceiling=" + this.ceiling.getName() + ", engine=" + engineType + " gloveCompartment=" + this.gloveCompartment.getName() + ", tires="
-                + TireType + ", upholstery=" + this.upholstery + "]";
+                + TireType + ", upholstery=" + this.upholstery.getName() + "]";
     }
   
     // to be extended by decorators
+    @Override
     public void park() {
         System.out.println("Parking car");
     }
 
-
+    @Override
+    public void entertain() {
+        System.out.println("Entertaining with radio");
+    }
 
 }
 
