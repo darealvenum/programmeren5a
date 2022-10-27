@@ -1,25 +1,42 @@
 package cars;
-import interior.*;
-import bridges.*;
+
+import bridges.Engine;
+import bridges.Tires;
+import factories.Ceiling;
+import factories.GloveCompartment;
+import factories.Upholstery;
+
 // sportcars should have an extra attribute
-public class SportsCar extends Car {
-    private boolean turbo;
+public class SportsCar extends AbstractCar {
+    private final boolean turbo;
+
     public SportsCar(Engine engine, Tires tires, Ceiling ceiling, Upholstery upholstery, GloveCompartment gloveCompartment, boolean turbo) {
         super(engine, tires, upholstery, ceiling, gloveCompartment);
         this.turbo = turbo;
     }
-    
+
     public boolean isTurbo() {
         return turbo;
     }
 
-
     @Override
     public String toString() {
-        String superRepr = super.toString();
-        if (turbo) {
-            return superRepr + " & sports car with turbo";
+        return String.format("%s & sports car %s", super.toString(), turbo ? "with turbo" : "");
+    }
+
+    @Override
+    public void startCar() {
+        if(this.turbo) {
+            System.out.println("Starting turbo..");
         }
-        return superRepr + " & sports car";
+        super.startCar();
+    }
+
+    @Override
+    public void stopCar() {
+        if(this.turbo) {
+            System.out.println("Stopping turbo..");
+        }
+        super.stopCar();
     }
 }
