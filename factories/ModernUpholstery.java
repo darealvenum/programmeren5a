@@ -1,12 +1,6 @@
 package factories;
 
 public class ModernUpholstery implements Upholstery {
-    private String fabric;
-
-
-    public void setFabric(String fabric) {
-        this.fabric = fabric;
-    }
 
     public String getName() {
         return "Modern Upholstery";
@@ -17,6 +11,10 @@ public class ModernUpholstery implements Upholstery {
     }
 
     public String getFabric() {
-        return fabric;
+        return "Leather" ;
+    }
+
+    public int getPrice() {
+        return 500;
     }
 }

@@ -8,4 +8,8 @@ public class WinterTires implements Tires {
     public void stop() {
         System.out.println("Winter Tires stopped");
     }
+
+    public int getPrice() {
+        return 200;
+    }
 }

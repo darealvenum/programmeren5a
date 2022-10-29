@@ -11,4 +11,8 @@ public class SoundSystemDecorator extends CarDecorator {
         this.car.entertain();
         System.out.println("and sound system");
     }
+
+    public int getPrice() {
+        return this.car.getPrice() + 200;
+    }
 }   

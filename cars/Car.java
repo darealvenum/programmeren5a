@@ -1,12 +1,15 @@
 package cars;
 
 public interface Car {
-    void park();
+    public void park();
 
-    void entertain();
+    public void entertain();
 
-    void startCar();
+    public void startCar();
 
-    void stopCar();
+    public void stopCar();
 
+    public void printCarInterior();
+
+    public int getPrice();
 }

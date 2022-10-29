@@ -1,7 +1,9 @@
 package bridges;
 
 public interface Tires {
-    void start();
+    public void start();
 
-    void stop();
+    public void stop();
+
+    public int getPrice();
 }

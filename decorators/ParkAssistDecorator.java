@@ -11,4 +11,8 @@ public class ParkAssistDecorator extends CarDecorator {
         this.car.park();
         System.out.println("with auto parking");
     }
+
+    public int getPrice() {
+        return this.car.getPrice() + 100;
+    }
 }

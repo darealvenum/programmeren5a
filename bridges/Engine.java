@@ -1,9 +1,10 @@
 package bridges;
 
 public interface Engine {
+    public void start();
 
-    void start();
+    public void stop();
 
-    void stop();
+    public int getPrice();
 
 }

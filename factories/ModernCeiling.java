@@ -2,21 +2,17 @@ package factories;
 
 public class ModernCeiling implements Ceiling {
 
-    private String skyLightColor;
 
-    public void setSkyLightColor(String skyLightColor) {
-        this.skyLightColor = skyLightColor;
-    }
-
-    public String getSkyLightColor() {
-        return skyLightColor;
-    }
-    
     public String getName() {
-        return "Modern Ceiling";
+        return "Modern Ceiling (with sky light)";
     }
 
     public String getColor() {
         return "White";
+    }
+
+    @Override
+    public int getPrice() {
+        return 1000;
     }
 }

@@ -8,4 +8,8 @@ public class AllSeasonTires implements Tires {
     public void stop() {
         System.out.println("Stopping All Season Tires");
     }
+
+    public int getPrice() {
+        return 400;
+    }
 }

@@ -5,12 +5,13 @@ import decorators.*;
 import bridges.*;
 import factories.*;
 
-public class AbstractCarBuilder implements CarBuilder {
+public abstract class AbstractCarBuilder implements CarBuilder {
     protected InteriorFactory interiorFactory;
     protected Engine engine;
     protected Tires tires;
     protected Car car;
-    
+
+   
 
     @Override
     public AbstractCarBuilder setEngine(String engine) {
@@ -24,6 +25,17 @@ public class AbstractCarBuilder implements CarBuilder {
 
         return this;
     }
+
+    public AbstractCarBuilder setEngineCapacity(int engineCapacity) {
+        if(this.engine instanceof DieselEngine) {
+            ((DieselEngine) this.engine).setMaxCapacity(engineCapacity);
+        } else {
+            throw new IllegalArgumentException("Engine capacity can only be set for diesel engine");
+        }
+
+        return this;
+    }
+
 
     @Override
     public AbstractCarBuilder setTires(String tires) {
@@ -71,11 +83,7 @@ public class AbstractCarBuilder implements CarBuilder {
     }
 
     @Override
-    public AbstractCarBuilder assemble() {
-        return this;
-    }
-
-    @Override
+    abstract public AbstractCarBuilder assemble();
     public Car build() {
         return car;
     }

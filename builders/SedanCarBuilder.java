@@ -4,19 +4,19 @@ import cars.*;
 
 
 public class SedanCarBuilder extends AbstractCarBuilder {
-    private int numDoors;
+    private int numSeats;
 
     @Override
     public SedanCarBuilder assemble() {
-        this.car = new Sudan(this.engine, this.tires,
+        this.car = new Sedan(this.engine, this.tires,
                 this.interiorFactory.createUpholstery(),
                 this.interiorFactory.createCeiling(),
-                this.interiorFactory.createGloveCompartment(), this.numDoors);
+                this.interiorFactory.createGloveCompartment(), this.numSeats);
         return this;
     }
 
-    public SedanCarBuilder setNumDoors(int numDoors) {
-        this.numDoors = numDoors;
+    public SedanCarBuilder setNumSeats(int numSeats) {
+        this.numSeats = numSeats;
         return this;
     }
 

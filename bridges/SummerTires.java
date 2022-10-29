@@ -8,4 +8,8 @@ public class SummerTires implements Tires {
     public void stop() {
         System.out.println("Stopping Summer Tires");
     }
+
+    public int getPrice() {
+        return 300;
+    }
 }
